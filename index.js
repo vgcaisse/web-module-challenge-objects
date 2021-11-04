@@ -17,7 +17,8 @@ The function should:
 
 function createMenuItem(name, price, catagory){
     return { name, price, catagory };
-  }
+}
+
 console.log(createMenuItem('tacos', 8, 'Lunch'));
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 1b: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -50,10 +51,18 @@ const burger = {
   name: "Burger", 
   price: 18, 
   category: "Lunch", 
-  
+  discount: function(person) {
+    if (person === 'teacher' || person === 'student') {
+      return this.price - (this.price * 0.25);
+    } else if (person === 'public') {
+      return this.price - (this.price * 0.10);
+    } else {
+      return `no discount available`;
+    }
+  }
 }
 
-
+console.log(burger.discount('teacher'));
 
 ///////////////Reviews (MVP)///////////////////
 const reviews = [
